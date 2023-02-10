@@ -10,12 +10,14 @@ import Vehicle from "../component/Vehicle";
 export default function Home() {
   const { store } = useContext(Context);
 
-  let [characters] = [store.characters];
+  let [characters, vehicles] = [store.characters, store.vehicles];
 
   return (
     <>
       <Nav />
+
       <Spacer />
+
       <Container fluid>
         <Text
           h2
@@ -42,7 +44,9 @@ export default function Home() {
           </Grid.Container>
         </Container>
       </Container>
+
       <Spacer />
+
       <Container fluid>
         <Text
           h2
@@ -56,8 +60,8 @@ export default function Home() {
         </Text>
         <Container fluid>
           <Grid.Container gap={1} justify="center">
-            {characters.map((item) => {
-              return <Vehicle vehicle={item} clase="vehicles" />;
+            {vehicles.map((item) => {
+              return <Vehicle vehicle={item} clase="vehicles" key={item.uid} />;
             })}
           </Grid.Container>
         </Container>
