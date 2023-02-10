@@ -3,23 +3,8 @@ import { Navbar, Text, Avatar, Dropdown } from "@nextui-org/react";
 import { StarwarsLogo } from "./StarwarsLogo";
 
 export default function Nav() {
-
-  // const collapseItems = [
-  //   "Profile",
-  //   "Dashboard",
-  //   "Activity",
-  //   "Analytics",
-  //   "System",
-  //   "Deployments",
-  //   "My Settings",
-  //   "Team Settings",
-  //   "Help & Feedback",
-  //   "Log Out",
-  // ];
-
   return (
-    <Navbar height={'100px'} variant="sticky">
-      
+    <Navbar height={"100px"} variant="sticky">
       <Navbar.Brand
         css={{
           "@xs": {
@@ -37,13 +22,10 @@ export default function Nav() {
           "@xl": {
             w: "15%",
           },
-         
         }}
       >
         <StarwarsLogo />
-        
       </Navbar.Brand>
-     
       <Navbar.Content
         css={{
           "@xs": {
@@ -73,34 +55,10 @@ export default function Nav() {
               <Text b color="inherit" css={{ d: "flex" }}>
                 Aún no selecciona favoritos
               </Text>
-              
             </Dropdown.Item>
-            
           </Dropdown.Menu>
         </Dropdown>
       </Navbar.Content>
-      {/* <Navbar.Collapse>
-        {collapseItems.map((item, index) => (
-          <Navbar.CollapseItem
-            key={item}
-            activeColor="secondary"
-            css={{
-              color: index === collapseItems.length - 1 ? "$error" : "",
-            }}
-            isActive={index === 2}
-          >
-            <Link
-              color="inherit"
-              css={{
-                minWidth: "100%",
-              }}
-              href="#"
-            >
-              {item}
-            </Link>
-          </Navbar.CollapseItem>
-        ))}
-      </Navbar.Collapse> */}
     </Navbar>
   );
 }

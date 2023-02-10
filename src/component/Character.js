@@ -5,14 +5,14 @@ import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 import noImageFound from "../img/no_image_available.svg";
 
-export default function Characters({ character, clase, clase2 }) {
+export default function Character({ character, clase, clase2 }) {
   const [image, setImage] = useState(noImageFound);
 
   function imageDefault(image) {
     var photo = `https://starwars-visualguide.com/assets/img/${clase2}/${character.uid}.jpg`;
 
     fetch(photo).then((result) => {
-      if (result) {
+      if (result.ok) {
         setImage(photo);
       }
     });
@@ -33,7 +33,7 @@ export default function Characters({ character, clase, clase2 }) {
             src={image}
             width="100%"
             height="100%"
-            objectFit="cover"
+            objectFit="fill"
             alt="Card example background"
           />
         </Card.Body>
