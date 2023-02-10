@@ -3,13 +3,8 @@ import { Navbar, Text, Avatar, Dropdown, useTheme } from "@nextui-org/react";
 import { StarwarsLogo } from "./StarwarsLogo";
 
 export default function Nav() {
-  const { isDark } = useTheme();
-  
-
   return (
-    <Navbar css={{
-      maxW: "100%"
-    }} height={"100px"} shouldHideOnScroll isBordered={isDark} variant="sticky">
+    <Navbar height={"100px"} shouldHideOnScroll variant="sticky">
       <Navbar.Brand
         css={{
           "@xs": {
@@ -31,14 +26,7 @@ export default function Nav() {
       >
         <StarwarsLogo />
       </Navbar.Brand>
-      <Navbar.Content
-        css={{
-          "@xs": {
-            w: "12%",
-            jc: "flex-end",
-          },
-        }}
-      >
+      <Navbar.Content>
         <Dropdown placement="bottom-right">
           <Navbar.Item>
             <Dropdown.Trigger>
