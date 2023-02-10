@@ -15,13 +15,14 @@ export default function Home() {
 
   return (
     <Container fluid css={{
-      maxW: "100%"
+      maxW: "100%",
+      
     }}>
-      <Nav  />
+      <Nav />
 
       <Spacer />
 
-      <Container fluid>
+      <Container>
         <Text
           h2
           size={60}
@@ -50,7 +51,7 @@ export default function Home() {
 
       <Spacer />
 
-      <Container fluid>
+      <Container>
         <Text
           h2
           size={60}
@@ -72,7 +73,7 @@ export default function Home() {
 
       <Spacer />
 
-      <Container fluid>
+      <Container >
         <Text
           h2
           size={60}
