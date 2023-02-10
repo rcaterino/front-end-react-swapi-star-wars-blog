@@ -1,10 +1,15 @@
 import React from "react";
-import { Navbar, Text, Avatar, Dropdown } from "@nextui-org/react";
+import { Navbar, Text, Avatar, Dropdown, useTheme } from "@nextui-org/react";
 import { StarwarsLogo } from "./StarwarsLogo";
 
 export default function Nav() {
+  const { isDark } = useTheme();
+  
+
   return (
-    <Navbar height={"100px"} variant="sticky">
+    <Navbar css={{
+      maxW: "100%"
+    }} height={"100px"} shouldHideOnScroll isBordered={isDark} variant="sticky">
       <Navbar.Brand
         css={{
           "@xs": {
