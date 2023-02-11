@@ -1,5 +1,7 @@
+import { Container } from "@nextui-org/react";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Nav from "./component/Nav";
 import injectContext from "./store/appContext";
 
 import Detail from "./views/Detail";
@@ -12,12 +14,18 @@ const Layout = () => {
 
   return (
     <BrowserRouter basename={basename}>
-      <Routes>
-        <Route exact path="/" element={<Home />}></Route>
-        <Route exact path="/detail" element={<Detail />}>
-          {/* <Route exact path='/:clase/:theid'> */}
-        </Route>
-      </Routes>
+      <Container
+        fluid
+        css={{
+          maxW: "100%",
+        }}
+      >
+        <Nav />
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/:clase/:theid" element={<Detail />}></Route>
+        </Routes>
+      </Container>
     </BrowserRouter>
   );
 };

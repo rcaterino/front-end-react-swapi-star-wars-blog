@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
 import { Grid } from "@nextui-org/react";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 import noImageFound from "../img/no_image_available.svg";
+
 
 export default function Vehicle({ planet, clase }) {
   const [image, setImage] = useState(noImageFound);
@@ -55,16 +57,18 @@ export default function Vehicle({ planet, clase }) {
             </Col>
             <Col>
               <Row justify="flex-end">
-                <Button shadow color="warning" auto>
-                  <Text
-                    css={{ color: "white" }}
-                    size={16}
-                    weight="bold"
-                    transform="uppercase"
-                  >
-                    Ver Detalle
-                  </Text>
-                </Button>
+                <Link to={`/${clase}/${planet.uid}`}>
+                  <Button shadow color="warning" auto>
+                    <Text
+                      css={{ color: "white" }}
+                      size={16}
+                      weight="bold"
+                      transform="uppercase"
+                    >
+                      Ver Detalle
+                    </Text>
+                  </Button>
+                </Link>
               </Row>
             </Col>
           </Row>
@@ -73,4 +77,3 @@ export default function Vehicle({ planet, clase }) {
     </Grid>
   );
 }
-

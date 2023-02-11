@@ -4,6 +4,7 @@ import { Grid } from "@nextui-org/react";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 import noImageFound from "../img/no_image_available.svg";
+import { Link } from "react-router-dom";
 
 export default function Vehicle({ vehicle, clase }) {
   const [image, setImage] = useState(noImageFound);
@@ -55,6 +56,7 @@ export default function Vehicle({ vehicle, clase }) {
             </Col>
             <Col>
               <Row justify="flex-end">
+                <Link to={`/${clase}/${vehicle.uid}`}>
                 <Button shadow color="warning" auto>
                   <Text
                     css={{ color: "white" }}
@@ -65,6 +67,8 @@ export default function Vehicle({ vehicle, clase }) {
                     Ver Detalle
                   </Text>
                 </Button>
+                </Link>
+                
               </Row>
             </Col>
           </Row>

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 
 import { NextUIProvider } from "@nextui-org/react";
 import { createTheme } from "@nextui-org/react";
-import { getDocumentTheme } from '@nextui-org/react';
 
 import Layout from "./layout";
 

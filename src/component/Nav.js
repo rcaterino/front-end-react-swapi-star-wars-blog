@@ -1,8 +1,12 @@
-import React from "react";
-import { Navbar, Text, Avatar, Dropdown, useTheme } from "@nextui-org/react";
+import React, { useContext } from "react";
+import { Navbar, Text, Dropdown, Button } from "@nextui-org/react";
 import { StarwarsLogo } from "./StarwarsLogo";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
+  const { store, actions } = useContext(Context);
+
   return (
     <Navbar height={"100px"} shouldHideOnScroll variant="sticky">
       <Navbar.Brand
@@ -24,19 +28,24 @@ export default function Nav() {
           },
         }}
       >
-        <StarwarsLogo />
+        <Link to="/">
+          <StarwarsLogo />
+        </Link>
       </Navbar.Brand>
       <Navbar.Content>
         <Dropdown placement="bottom-right">
           <Navbar.Item>
             <Dropdown.Trigger>
-              <Avatar
-                bordered
-                as="button"
-                color="secondary"
-                size="lg"
-                src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-              />
+              <Button shadow color="warning" auto>
+                <Text
+                  css={{ color: "white" }}
+                  size={16}
+                  weight="bold"
+                  transform="uppercase"
+                >
+                  Favoritos
+                </Text>
+              </Button>
             </Dropdown.Trigger>
           </Navbar.Item>
           <Dropdown.Menu

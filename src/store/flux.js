@@ -2,8 +2,9 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       characters: [],
-	  vehicles: [],
-	  planets: []
+      vehicles: [],
+      planets: [],
+      favorites: [],
     },
     actions: {
       getCharacters: async () => {
@@ -24,12 +25,15 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
-	  getVehicles: async () => {
+      getVehicles: async () => {
         const opts = {
           method: "GET",
         };
         try {
-          const resp = await fetch("https://www.swapi.tech/api/vehicles/", opts);
+          const resp = await fetch(
+            "https://www.swapi.tech/api/vehicles/",
+            opts
+          );
           if (resp.status !== 200) {
             new Error("error al cargar los vehiculos");
             return false;
@@ -42,7 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
-	  getPlanets: async () => {
+      getPlanets: async () => {
         const opts = {
           method: "GET",
         };
@@ -59,6 +63,15 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.log(error);
         }
+      },
+      setFavorites: (newFavorite) => {
+        setStore({ favorites: newFavorite });
+      },
+      delFavorites: (favToDelete) => {
+        const updateFavorites = getStore().favorites.filter(
+          (fav) => fav.name !== favToDelete
+        );
+        setStore({ favorites: updateFavorites });
       },
     },
   };

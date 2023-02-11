@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 
 import { Container, Grid, Spacer, Text } from "@nextui-org/react";
 
-import Nav from "../component/Nav";
 import Character from "../component/Character";
 import Vehicle from "../component/Vehicle";
 import Planet from "../component/Planet";
@@ -11,17 +10,16 @@ import Planet from "../component/Planet";
 export default function Home() {
   const { store } = useContext(Context);
 
-  let [characters, vehicles, planets] = [store.characters, store.vehicles, store.planets];
+  let [characters, vehicles, planets, favorites] = [
+    store.characters,
+    store.vehicles,
+    store.planets,
+    store.favorites,
+  ];
 
   return (
-    <Container fluid css={{
-      maxW: "100%",
-      
-    }}>
-      <Nav />
-
+    <Container>
       <Spacer />
-
       <Container>
         <Text
           h2
@@ -48,9 +46,7 @@ export default function Home() {
           </Grid.Container>
         </Container>
       </Container>
-
       <Spacer />
-
       <Container>
         <Text
           h2
@@ -70,10 +66,8 @@ export default function Home() {
           </Grid.Container>
         </Container>
       </Container>
-
       <Spacer />
-
-      <Container >
+      <Container>
         <Text
           h2
           size={60}
