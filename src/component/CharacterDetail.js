@@ -1,5 +1,6 @@
 import React from "react";
-import { Col, Container, Table } from "@nextui-org/react";
+
+import { Col, Table } from "@nextui-org/react";
 
 export default function CharacterDetail(details) {
   let detail = details.details;
@@ -55,7 +56,5 @@ export default function CharacterDetail(details) {
         </Table.Body>
       </Table>
     </Col>
-      
-
   );
 }

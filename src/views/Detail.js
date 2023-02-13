@@ -64,7 +64,7 @@ export default function Detail() {
   }, [details, isFavorite]);
 
   return (
-    <Container gap={0}>
+    <Container fluid gap={0}>
       <Row gap={1}>
         <Col justify="center" align="center">
           <Image
@@ -86,32 +86,29 @@ export default function Detail() {
           )}
         </Col>
       </Row>
-      <Spacer y={1} />
+     
       <Row>
         <Col justify="center" align="center">
-          <Button.Group color="warning">
-            <Button shadow color="warning" auto>
-              <Link to="/">
-                <Text
-                  css={{ color: "white" }}
-                  size={16}
-                  weight="bold"
-                  transform="uppercase"
-                >
-                  Volver al inicio
-                </Text>
-              </Link>
-            </Button>
-            <Button
-              auto
-              color="error"
-              icon={<HeartIcon fill="currentColor" filled />}
-              onClick={(e) => {
-                handleClick(e);
-              }}
-            />
-          </Button.Group>
+          <Button shadow color="warning" auto>
+            <Link to="/">
+              <Text
+                css={{ color: "white" }}
+                size={16}
+                weight="bold"
+                transform="uppercase"
+              >
+                Volver al inicio
+              </Text>
+            </Link>
+          </Button>
         </Col>
+        {/* <Col>
+          <Button
+            auto
+            color="error"
+            icon={<HeartIcon fill="currentColor" filled />}
+          />
+        </Col> */}
       </Row>
     </Container>
   );
