@@ -6,9 +6,6 @@ import { createTheme } from "@nextui-org/react";
 
 import Layout from "./layout";
 
-const lightTheme = createTheme({
-  type: 'light',
-})
 const darkTheme = createTheme({
   type: 'dark',
 })

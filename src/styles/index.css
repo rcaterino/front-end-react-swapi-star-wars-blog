@@ -1,0 +1,7 @@
+.stars {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	background-color: black;
+	z-index: 2;
+}

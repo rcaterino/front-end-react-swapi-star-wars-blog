@@ -1,6 +1,7 @@
 import { Container } from "@nextui-org/react";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./component/Footer";
 import Nav from "./component/Nav";
 import injectContext from "./store/appContext";
 
@@ -25,6 +26,7 @@ const Layout = () => {
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/:clase/:theid" element={<Detail />}></Route>
         </Routes>
+        <Footer/>
       </Container>
     </BrowserRouter>
   );
