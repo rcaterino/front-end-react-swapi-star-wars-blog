@@ -6,7 +6,6 @@ import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 import noImageFound from "../img/no_image_available.svg";
 
-
 export default function Vehicle({ planet, clase }) {
   const [image, setImage] = useState(noImageFound);
 
@@ -57,8 +56,8 @@ export default function Vehicle({ planet, clase }) {
             </Col>
             <Col>
               <Row justify="flex-end">
-                <Link to={`/${clase}/${planet.uid}`}>
-                  <Button shadow color="warning" auto>
+                <Button shadow color="warning" auto>
+                  <Link to={`/${clase}/${planet.uid}`}>
                     <Text
                       css={{ color: "white" }}
                       size={16}
@@ -67,8 +66,8 @@ export default function Vehicle({ planet, clase }) {
                     >
                       Ver Detalle
                     </Text>
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </Row>
             </Col>
           </Row>

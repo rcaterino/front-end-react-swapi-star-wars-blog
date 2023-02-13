@@ -6,7 +6,6 @@ import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 import noImageFound from "../img/no_image_available.svg";
 
-
 export default function Character({ character, clase, clase2 }) {
   const [image, setImage] = useState(noImageFound);
 
@@ -57,8 +56,8 @@ export default function Character({ character, clase, clase2 }) {
             </Col>
             <Col>
               <Row justify="flex-end">
-                <Link to={`/${clase}/${character.uid}`}>
-                  <Button shadow color="warning" auto>
+                <Button shadow color="warning" auto>
+                  <Link to={`/${clase}/${character.uid}`}>
                     <Text
                       css={{ color: "white" }}
                       size={16}
@@ -67,8 +66,8 @@ export default function Character({ character, clase, clase2 }) {
                     >
                       Ver Detalle
                     </Text>
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </Row>
             </Col>
           </Row>

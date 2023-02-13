@@ -56,19 +56,18 @@ export default function Vehicle({ vehicle, clase }) {
             </Col>
             <Col>
               <Row justify="flex-end">
-                <Link to={`/${clase}/${vehicle.uid}`}>
                 <Button shadow color="warning" auto>
-                  <Text
-                    css={{ color: "white" }}
-                    size={16}
-                    weight="bold"
-                    transform="uppercase"
-                  >
-                    Ver Detalle
-                  </Text>
+                  <Link to={`/${clase}/${vehicle.uid}`}>
+                    <Text
+                      css={{ color: "white" }}
+                      size={16}
+                      weight="bold"
+                      transform="uppercase"
+                    >
+                      Ver Detalle
+                    </Text>
+                  </Link>
                 </Button>
-                </Link>
-                
               </Row>
             </Col>
           </Row>
